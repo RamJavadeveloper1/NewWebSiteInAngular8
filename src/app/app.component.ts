@@ -1,5 +1,6 @@
 import { LowerCasePipe } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { ViewChild } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { NewapiservicesService } from './sevice/newapiservices.service';
 
 @Component({
@@ -10,19 +11,20 @@ import { NewapiservicesService } from './sevice/newapiservices.service';
 export class AppComponent implements OnInit {
 
   title = 'localNewsWebsite';
+  loading = true;
   categoryDisplay :any;
-  categoryitem: any
+  categoryitem: any;
+
+
   constructor(private _service : NewapiservicesService){}
 
   ngOnInit(): void {
+  
   }
 
   onSelected(value:string): void {
-		//this.selectedTeam = value;
     this.categoryitem =value;
-    this._service.byCategory =this.categoryitem;
-
-    console.log();
+    console.log(value);  
 	}
 
 }

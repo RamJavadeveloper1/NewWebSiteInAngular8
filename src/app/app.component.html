@@ -2,7 +2,8 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Local News</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -19,28 +20,42 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="">Features</a>
+          <a class="nav-link " aria-current="page" routerLink="sport">Sport News</a>
         </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-           
-          <select #teams (change)="onSelected(teams.value)" class="mb-3">
-            <option>Technology</option>
-            <option>Entertainment</option>
-            <option>Business</option>
-            <option>Science</option>
-            <option>Sports</option>
-            <option default>General</option>
-          </select>
-        </a>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" routerLink="entertainment">Entertainment News</a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" routerLink="science">Science News</a>
+        </li>
+
+        <!-- <li class="nav-item">
+          <a class="nav-link" routerLink="">Features</a>
+        </li> -->
+
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+            <select #teams (change)="onSelected(teams.value)" class="mb-3">
+              <option>Technology</option>
+              <option>Entertainment</option>
+              <option>Business</option>
+              <option>Science</option>
+              <option>Sports</option>
+              <option default>General</option>
+            </select>
+          </a>
+        </li> -->
       </ul>
     </div>
   </div>
 </nav>
 
-<router-outlet></router-outlet>
+<router-outlet>
+  <span class="loader" *ngIf="loading"></span>
+</router-outlet>
 <footer class="mt-3">
   <p class="text-center">&copy; 2022 LocalNewsWebsite</p>
 </footer>
